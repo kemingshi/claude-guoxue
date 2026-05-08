@@ -1,0 +1,396 @@
+:root {
+  --primary: #009688;
+  --primary-light: #26a69a;
+  --primary-dark: #00796b;
+  --bg: #f5f5f5;
+  --card-bg: #ffffff;
+  --text: #333333;
+  --text-secondary: #999999;
+  --sidebar-width: 180px;
+  --header-height: 56px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, "Microsoft YaHei", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* ===== Layout ===== */
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  background: #fff;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  overflow-y: auto;
+  padding-top: env(safe-area-inset-top);
+}
+
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  min-height: 100vh;
+}
+
+/* ===== Header ===== */
+
+.header {
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  height: var(--header-height);
+  line-height: var(--header-height);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* ===== Sidebar Items ===== */
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 15px;
+  color: var(--text);
+  text-align: left;
+  transition: background 150ms ease;
+}
+
+.sidebar-item:hover {
+  background: #f0f0f0;
+}
+
+.sidebar-item-active {
+  background: var(--primary);
+  color: #fff;
+}
+
+.sidebar-item-active:hover {
+  background: var(--primary-dark);
+}
+
+.sidebar-icon {
+  font-size: 18px;
+  width: 24px;
+  text-align: center;
+}
+
+.sidebar-label {
+  white-space: nowrap;
+}
+
+/* ===== Container ===== */
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* ===== Card ===== */
+
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  opacity: 1;
+  transition: opacity 300ms ease;
+}
+
+.card.fade-out {
+  opacity: 0;
+}
+
+.poem-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.poem-meta {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.poem-body {
+  font-family: "Noto Serif SC", "思源宋体", "SimSun", serif;
+  font-size: 20px;
+  line-height: 2;
+  text-align: center;
+}
+
+.poem-body p {
+  margin: 0;
+}
+
+/* ===== Hexagram ===== */
+
+.hexagram-symbol {
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+/* ===== Story Content ===== */
+
+.story-section {
+  margin-bottom: 20px;
+}
+
+.story-label {
+  font-size: 13px;
+  color: var(--primary);
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.story-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.story-text.moral {
+  font-style: italic;
+  color: var(--primary-dark);
+}
+
+/* ===== Actions ===== */
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.btn {
+  height: 44px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 22px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 150ms ease, transform 150ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn:hover {
+  background: var(--primary-light);
+}
+
+.btn:active {
+  background: var(--primary-dark);
+  transform: scale(0.95);
+}
+
+/* ===== Search ===== */
+
+.search-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.search-input {
+  flex: 1;
+  height: 44px;
+  padding: 0 16px;
+  border: 1px solid #ddd;
+  border-radius: 22px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 150ms ease;
+}
+
+.search-input:focus {
+  border-color: var(--primary);
+}
+
+.btn-search {
+  white-space: nowrap;
+}
+
+.search-header {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.search-results {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.search-result-item {
+  padding: 14px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 150ms ease;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item:hover {
+  background: #f5f5f5;
+}
+
+.search-result-title {
+  font-size: 16px;
+}
+
+.search-result-meta {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.search-empty {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+/* ===== Stats ===== */
+
+.stats {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 16px;
+}
+
+/* ===== Toast ===== */
+
+.toast {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 24px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 200;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ===== Mobile Responsive ===== */
+
+@media (max-width: 600px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .sidebar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sidebar-item {
+    flex-direction: column;
+    padding: 10px 14px;
+    gap: 2px;
+    min-width: max-content;
+    font-size: 12px;
+  }
+
+  .sidebar-icon {
+    font-size: 20px;
+  }
+
+  .sidebar-label {
+    font-size: 11px;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding-top: 80px;
+  }
+
+  .container {
+    padding: 16px;
+  }
+
+  .card {
+    padding: 24px 20px;
+  }
+
+  .poem-title {
+    font-size: 20px;
+  }
+
+  .poem-body {
+    font-size: 18px;
+  }
+
+  .hexagram-symbol {
+    font-size: 40px;
+  }
+}

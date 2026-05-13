@@ -16,7 +16,12 @@ function getSearchableText(item, type) {
       break;
     case 'yijing':
       if (item.judgment) texts.push(item.judgment);
+      if (item.tuan) texts.push(item.tuan);
       if (item.image) texts.push(item.image);
+      if (item.lines) item.lines.forEach(function (l) {
+        texts.push(l.text);
+        texts.push(l.xiang);
+      });
       break;
     case 'laozi':
     case 'zhuangzi':

@@ -52,8 +52,26 @@ function YijingContent({ item }) {
       <div class="story-text">${item.judgment}</div>
     </div>
     <div class="story-section">
-      <div class="story-label">象曰</div>
+      <div class="story-label">彖曰</div>
+      <div class="story-text">${item.tuan}</div>
+    </div>
+    <div class="story-section">
+      <div class="story-label">大象</div>
       <div class="story-text">${item.image}</div>
+    </div>
+    <div class="story-section">
+      <div class="story-label">爻辞</div>
+      <div class="lines-list">
+        ${item.lines && item.lines.map(function (line) {
+          return html`
+            <div class="line-item">
+              <div class="line-name">${line.name}</div>
+              <div class="line-text">${line.text}</div>
+              <div class="line-xiang">象曰：${line.xiang}</div>
+            </div>
+          `;
+        })}
+      </div>
     </div>
   `;
 }

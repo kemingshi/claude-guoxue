@@ -31,9 +31,9 @@ tangshi300/
 │   └── Toast.js            # 提示
 ├── data/                   # 数据文件
 │   ├── poems.js            # 唐诗 294 首
-│   ├── ci.js               # 宋词 50 首
-│   ├── idioms.js           # 成语故事 30 条
-│   ├── fables.js           # 寓言故事 20 条
+│   ├── ci.js               # 宋词 100 首
+│   ├── idioms.js           # 成语故事 100 条
+│   ├── fables.js           # 寓言故事 100 条
 │   ├── yijing.js           # 周易 64 卦
 │   ├── laozi.js            # 老子 81 章
 │   ├── zhuangzi.js         # 庄子经典篇章

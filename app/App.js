@@ -130,7 +130,13 @@ function App() {
       case 'fable':
         return item.title + '\n\n' + item.story + '\n\n寓意：' + item.moral;
       case 'yijing':
-        return item.title + ' ' + item.symbol + '\n\n卦辞：' + item.judgment + '\n\n象曰：' + item.image;
+        var shareText = item.title + ' ' + item.symbol + '\n\n卦辞：' + item.judgment + '\n\n彖曰：' + item.tuan + '\n\n大象：' + item.image;
+        if (item.lines) {
+          shareText += '\n\n' + item.lines.map(function (l) {
+            return l.name + ' ' + l.text + '\n象曰：' + l.xiang;
+          }).join('\n\n');
+        }
+        return shareText;
       case 'laozi':
         return '老子·第' + item.chapter + '章 ' + item.title + '\n\n' + item.paragraphs.join('\n');
       case 'zhuangzi':

@@ -26,9 +26,9 @@
 
 ### 步骤 1：准备数据文件 ✓
 - [x] `data/poems.js` — 唐诗 294 首，添加 export、id、type 字段
-- [x] `data/ci.js` — 宋词 50 首
-- [x] `data/idioms.js` — 成语故事 30 条
-- [x] `data/fables.js` — 寓言故事 20 条
+- [x] `data/ci.js` — 宋词 100 首
+- [x] `data/idioms.js` — 成语故事 100 条
+- [x] `data/fables.js` — 寓言故事 100 条
 - [x] `data/yijing.js` — 周易 64 卦
 - [x] `data/laozi.js` — 老子 81 章
 - [x] `data/zhuangzi.js` — 庄子经典篇章

@@ -1,4 +1,4 @@
-var CACHE_NAME = 'guoxue-v2';
+var CACHE_NAME = 'guoxue-v3';
 var PRECACHE_URLS = [
   './',
   './index.html',
